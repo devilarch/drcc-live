@@ -34,13 +34,13 @@ const AccountForm = () => {
     };
     try {
       // Make POST request to the API
-        const response = await axios.POST(apiUrl, payload)
+        const response = await axios.post(apiUrl, payload)
       // Check if validation_status is 'Success' or 'Failure' in the response
       if (response.data.validation_status === 'Success') {
         // Move to next page or perform other action
         // Move to next page
-        //const stage = response.data.recordList[0].STAGE;
-        const stage = response.data.name;
+        const stage = response.data.recordList[0].STAGE;
+        //const stage = response.data.name;
         setPopupMessage(`Payment Status: ${stage}`);
       } else {
         // Show pop-up message if account number does not exist
