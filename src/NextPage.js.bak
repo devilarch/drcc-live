@@ -1,0 +1,50 @@
+import React from 'react';
+
+const NextPage = ({ location }) => {
+  const { accountNumber, response } = location.state || {};
+
+  if (!accountNumber || !response) {
+    // Handle case where data is not available
+    return <div>Data not available</div>;
+  }
+
+  return (
+    <div style={{ padding: '20px' }}>
+      <h1 style={{ fontSize: '36px' }}>Account Number: {accountNumber}</h1>
+      <div style={{ width: '500px', margin: '20px auto' }}>
+        <h2 style={{ fontSize: '28px', marginBottom: '20px' }}>Loan Status</h2>
+        <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: '20px' }}>
+          <tbody>
+            <tr>
+              <td style={{ border: '1px solid black', padding: '10px' }}>Loan Status</td>
+              <td style={{ border: '1px solid black', padding: '10px' }}>{response.recordList[0].STAGE}</td>
+            </tr>
+            <tr>
+              <td style={{ border: '1px solid black', padding: '10px' }}>Requested Loan Amount</td>
+              <td style={{ border: '1px solid black', padding: '10px' }}>{response.recordList[0].REQUESTED_LOAN_AMOUNT}</td>
+            </tr>
+            <tr>
+              <td style={{ border: '1px solid black', padding: '10px' }}>Approved Loan Amount</td>
+              <td style={{ border: '1px solid black', padding: '10px' }}>{response.recordList[0].APPROVED_LOAN_AMOUNT}</td>
+            </tr>
+            <tr>
+              <td style={{ border: '1px solid black', padding: '10px' }}>Loan Approved Date</td>
+              <td style={{ border: '1px solid black', padding: '10px' }}>{response.recordList[0].LOAN_APPROVED_DATE}</td>
+            </tr>
+            <tr>
+              <td style={{ border: '1px solid black', padding: '10px' }}>Status of Disbursed Loan</td>
+              <td style={{ border: '1px solid black', padding: '10px' }}>{response.recordList[0].STATUS_OF_DISBURSED_LOAN}</td>
+            </tr>
+            <tr>
+              <td style={{ border: '1px solid black', padding: '10px' }}>Status of Loan Request</td>
+              <td style={{ border: '1px solid black', padding: '10px' }}>{response.recordList[0].STATUS_OF_LOAN_REQUEST}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  );
+};
+
+export default NextPage;
+
