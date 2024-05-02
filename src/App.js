@@ -32,12 +32,9 @@ const AccountForm = () => {
         ss_module_id: '1'
       }
     };
-    const apiU = `https://www.bsefcl.bihar.gov.in//api///${accountNumber}`;
-
     try {
       // Make POST request to the API
-     // const response = await axios.post(apiUrl, payload);
-        const response = await axios.get(apiU)
+        const response = await axios.get(apiUrl, payload)
       // Check if validation_status is 'Success' or 'Failure' in the response
       if (response.data.validation_status === 'Success') {
         // Move to next page or perform other action
