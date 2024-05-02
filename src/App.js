@@ -34,7 +34,7 @@ const AccountForm = () => {
     };
     try {
       // Make POST request to the API
-        const response = await axios.get(apiUrl, payload)
+        const response = await axios.POST(apiUrl, payload)
       // Check if validation_status is 'Success' or 'Failure' in the response
       if (response.data.validation_status === 'Success') {
         // Move to next page or perform other action
