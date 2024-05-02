@@ -55,7 +55,7 @@ const AccountForm = () => {
   return (
     <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100vh', backgroundColor: '#f2f2f2' }}>
       <div style={{ width: '300px', height: '200px', backgroundColor: '#e6e6e6', borderRadius: '10px', boxShadow: '5px 5px 10px rgba(0, 0, 0, 0.1)', padding: '20px', textAlign: 'center' }}>
-        <h2 style={{ fontSize: '24px', marginBottom: '20px' }}>Enter Account Number</h2>
+        <h2 style={{ fontSize: '24px', marginBottom: '20px' }}>Enter Registration ID Number</h2>
         <form onSubmit={handleSubmit}>
           <label>
             <input
